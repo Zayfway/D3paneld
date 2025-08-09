@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Vérification…</title>
+  <style>
+    body{margin:0;height:100vh;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#6f7cfb,#8e44ad);font-family:sans-serif;color:#fff}
+    .spinner{width:64px;height:64px;border:8px solid rgba(255,255,255,.3);border-top-color:#fff;border-radius:50%;animation:spin 1s linear infinite;margin:auto}
+    @keyframes spin{to{transform:rotate(360deg)}}
+    p{margin-top:16px;text-align:center;opacity:.95}
+    .wrap{text-align:center}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="spinner"></div>
+    <p>Vérification en cours…</p>
+  </div>
+  <script>
+    setTimeout(()=>{ location.href = 'code.html'; }, 2000);
+  </script>
+</body>
+</html>

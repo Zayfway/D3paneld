@@ -1,0 +1,27 @@
+
+/* Alignement drapeau et case numéro */
+.phone-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #eee;
+  border-radius: 10px;
+  padding: 10px 12px;
+  width: 90%;
+  margin: 12px auto;
+}
+.phone-group .flag {
+  display: inline-flex;
+  align-items: center;
+  line-height: 1;
+  font-size: 18px;
+  transform: translateY(1px);
+}
+.phone-group input[type="tel"], .phone-group input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  font-size: 15px;
+  padding: 0;
+  outline: none;
+}

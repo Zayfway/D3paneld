@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Code</title>
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+  <div class="card">
+    <div class="logo-wrapper">
+      <img src="assets/logo.png" alt="Logo"/>
+    </div>
+    <h2>Code de vérification</h2>
+    <p>Entrez le code SMS reçu</p>
+    <input type="text" id="code" placeholder="****" maxlength="4" />
+    <p id="error" class="error-text" style="display:none;">Erreur du serveur interne</p>
+    <button onclick="submitCode()">Vérifier</button>
+  </div>
+  <script src="assets/code.js"></script>
+</body>
+</html>

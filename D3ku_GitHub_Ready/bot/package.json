@@ -1,0 +1,9 @@
+
+{
+  "name": "d3ku-bot",
+  "main": "bot.js",
+  "type": "module",
+  "dependencies": {
+    "discord.js": "^14.11.0"
+  }
+}

